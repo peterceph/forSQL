@@ -80,6 +80,21 @@ select * from vl_employees.first_name
 inner join vl_employees.last_name
 on 
 
+
+--COMPARE THIS TWO using the explain plan the first one cost more i.e. uses up more resources than the second 
+
+select last_name from vl_employees 
+where emp_id <> 200;
+
+select last_name from vl_employees
+where emp_id= 200;
+
+
+
+
+
+drop index 
+
 SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
 
 select department_id, count(*) as departments from vl_employees 
@@ -116,6 +131,12 @@ OR e.department_id = d.department_id;
 
 SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
 
+select first_name, manager_id, salary, department_id from employees 
+where employee_id = 200;
+
+select first_name, manager_id, salary, department_id from employees 
+where employee_id <> 200
+
 -- The next thing in order to optimize this query is to write an index for manager_id and department_id
 select * from departments 
 
@@ -138,3 +159,23 @@ ON e.manager_id = d.manager_id
 OR e.department_id = d.department_id;
 
 SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
+
+
+
+select * from employees
+
+-- ACID PROPERITES / TRANSACTIONS
+
+update employees 
+set salary = salary - 500
+where employee_id = 200;
+
+commit;
+
+rollback;
+
+
+select e.first_name ||' ' ||e.last_name as name from employees e
+where employee_id = 200
+
+select 
