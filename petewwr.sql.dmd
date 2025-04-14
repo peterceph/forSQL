@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="petewwr.sql" id="7791FE68-3712-422F-10E2-57EB451D0C99" version="3.5">
+<createdBy>poguntola</createdBy>
+<createdTime>2025-04-11 09:37:08 UTC</createdTime>
+<ownerDesignName>petewwr.sql</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7791FE68-3712-422F-10E2-57EB451D0C99</designId>
+<usedDesignStorageDescriptors>
+</usedDesignStorageDescriptors>
+</OSDM_Design>
